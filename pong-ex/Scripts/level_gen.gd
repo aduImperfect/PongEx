@@ -21,15 +21,13 @@ func _process(_delta: float) -> void:
 
 func _spawn_level() -> void:
 	var level_instance = LEVEL_SCENE.instantiate()
-	level_instance.global_position.x = 0.0
-	level_instance.global_position.y = 0.0
 	add_child(level_instance)
 	levelNode = level_instance
 
 func _spawn_players() -> void:
 	for k in PlayersHelper.numPlayers:
 		var player_instance = PlayersHelper.PLAYER_SCENE.instantiate()
-		player_instance.global_position = PlayersHelper.playersPos[k]
+		player_instance.position = PlayersHelper.playersPos[k]
 		player_instance.name = "Player_" + str(k)
 		#Setup player input and open this code again!
 		player_instance.get_child(0).player_id = k

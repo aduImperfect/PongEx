@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cta7e60yoeqkc"]
 
 [ext_resource type="Texture2D" uid="uid://drckfwu1f3v0f" path="res://Textures/Sphere.png" id="1_d60mj"]
+[ext_resource type="Script" uid="uid://bw4537uwq71os" path="res://Scenes/ball.gd" id="1_ij5cq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ij5cq"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d2add"]
 
@@ -12,6 +17,10 @@ albedo_texture = ExtResource("1_d60mj")
 [node name="Ball" type="Node3D" unique_id=333281289]
 
 [node name="BallRB3D" type="RigidBody3D" parent="." unique_id=417972407]
+physics_material_override = SubResource("PhysicsMaterial_ij5cq")
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_ij5cq")
 
 [node name="BallCS3D" type="CollisionShape3D" parent="BallRB3D" unique_id=864442160]
 shape = SubResource("SphereShape3D_d2add")
@@ -20,3 +29,5 @@ debug_color = Color(0.60339767, 0.54241043, 0, 0.41960785)
 [node name="BallMesh3D" type="MeshInstance3D" parent="BallRB3D" unique_id=1990668583]
 material_override = SubResource("StandardMaterial3D_ij5cq")
 mesh = SubResource("SphereMesh_m6x6n")
+
+[connection signal="body_entered" from="BallRB3D" to="BallRB3D" method="_on_body_entered"]
