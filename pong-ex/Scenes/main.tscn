@@ -14,6 +14,7 @@ transform = Transform3D(-4.3711385e-08, -0.86602545, 0.49999994, 0, 0.49999997, 
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1831406400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4271, 0)
+light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=307583829]
