@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://yawnc8dlnjqa"]
+
+[ext_resource type="Texture2D" uid="uid://okvh8k0tkp63" path="res://Textures/Wall.png" id="1_d155t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b57mv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjehn"]
+albedo_texture = ExtResource("1_d155t")
+
+[sub_resource type="BoxMesh" id="BoxMesh_b57mv"]
+
+[node name="Wall" type="Node3D" unique_id=1359778175]
+
+[node name="WallRB3D" type="RigidBody3D" parent="." unique_id=1514409661]
+gravity_scale = 0.0
+freeze = true
+
+[node name="WallCS3D" type="CollisionShape3D" parent="WallRB3D" unique_id=2072513452]
+shape = SubResource("BoxShape3D_b57mv")
+debug_color = Color(0.6064827, 0.36519766, 1, 0.41960785)
+
+[node name="WallMesh3D" type="MeshInstance3D" parent="WallRB3D" unique_id=1370928488]
+material_override = SubResource("StandardMaterial3D_yjehn")
+mesh = SubResource("BoxMesh_b57mv")

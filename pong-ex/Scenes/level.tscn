@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bmsfu0u0s3vjv"]
+
+[ext_resource type="PackedScene" uid="uid://cvrb5p72yhhdd" path="res://Scenes/ground.tscn" id="1_tumq0"]
+[ext_resource type="PackedScene" uid="uid://cta7e60yoeqkc" path="res://Scenes/ball.tscn" id="2_k5f4k"]
+[ext_resource type="PackedScene" uid="uid://yawnc8dlnjqa" path="res://Scenes/wall.tscn" id="4_81xng"]
+
+[node name="Level" type="Node3D" unique_id=1806262249]
+
+[node name="Ground" parent="." unique_id=1632570193 instance=ExtResource("1_tumq0")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.021140337, 0, 0.020151138)
+
+[node name="Ball" parent="." unique_id=333281289 instance=ExtResource("2_k5f4k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30299926, 1, 0.30653977)
+
+[node name="Wall1" parent="." unique_id=1359778175 instance=ExtResource("4_81xng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 40, 20, 0.5, 0)
+
+[node name="Wall2" parent="." unique_id=1515835584 instance=ExtResource("4_81xng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 40, -20, 0.5, 0)
